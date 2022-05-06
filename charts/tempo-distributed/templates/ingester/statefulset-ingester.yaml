@@ -11,6 +11,7 @@ metadata:
   {{- end }}
 spec:
   replicas: {{ .Values.ingester.replicas }}
+  podManagementPolicy: Parallel
   selector:
     matchLabels:
       {{- include "tempo.ingesterSelectorLabels" . | nindent 6}}
